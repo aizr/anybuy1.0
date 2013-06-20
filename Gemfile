@@ -22,7 +22,10 @@ gem 'redis_captcha'
 gem 'capybara'
 gem "kaminari"              #分頁
 gem 'kaminari-i18n'
-
+gem 'unicorn'
+gem 'capistrano-unicorn'
+gem 'capistrano'
+gem 'capistrano-ext'
 #gem 'nokogiri', '1.5.6'
 #gem 'libxml2'
 
@@ -58,10 +61,8 @@ gem 'mini_magick'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
-gem 'capistrano-unicorn'
+
 # Deploy with Capistrano
-gem 'capistrano'
-gem 'capistrano-ext'
+
 # To use debugger
 # gem 'debugger'

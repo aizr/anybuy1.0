@@ -2,23 +2,20 @@
 Anybuy::Application.routes.draw do
 
   devise_for :users do
- 
   end
-   #get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
 
-   
-  resources :products 
-    
+  resources :products
+
   resources :bids
     match '/bid' => 'bid#biding'
-    
-  resources :about do 
+
+  resources :about do
     collection do
     get :message
     get :home
     end
    end
-  
+
     match 'help/contact_index' => 'help#contact_index', :via => [:get]
     match 'help/contact_show/:id' => 'help#contact_show', :as => "contact_show", :via => [:get]
     match 'help/contact' => 'help#contact', :via => [:get]
@@ -37,10 +34,10 @@ Anybuy::Application.routes.draw do
   get "other/clause1"
 
   get "other/clause2"
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
-    
+
     #post "bids/biding" => "bid#update"
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

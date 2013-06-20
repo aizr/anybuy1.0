@@ -1,13 +1,13 @@
 <div class="row-fluid" id="sidebar">
-	<div class="ab-container span3">
-		<% if current_user %>
-		<h4>會員專區</h4>
-		<li><%= link_to '會員管理'.html_safe, edit_registration_path(:user) %></li>
-		<li><%= link_to '點數購買'.html_safe, order_buymoney_path %></li>
-		<hr />
-		<% end %>
-		<h4 >幫助</h4>
-		<li><%= link_to '新手教學'.html_safe, help_tiro_path %></li>
-		<li><%= link_to '常見問題'.html_safe, help_question_path %></li>
-		<li><%= link_to '聯絡我們'.html_safe, help_contact_path %></li>
-	</div>
+  <div class="ab-container span3">
+    <% if current_user %>
+    <h4>會員專區</h4>
+    <li><%= link_to '會員管理'.html_safe, edit_registration_path(:user) %></li>
+    <li><%= link_to '點數購買'.html_safe, order_buymoney_path %></li>
+    <hr />
+    <% end %>
+    <h4 >幫助</h4>
+    <li><%= link_to '新手教學'.html_safe, help_tiro_path %></li>
+    <li><%= link_to '常見問題'.html_safe, help_question_path %></li>
+    <li><%= link_to '聯絡我們'.html_safe, help_contact_path %></li>
+  </div>
