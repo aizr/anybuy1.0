@@ -1,118 +1,96 @@
 <div class="ab-container" id="product_show">
-	<p id="notice"><%= notice %></p>
-
-	
-	<div class="product_title">
-		<div class="breadcrumbs">
-		<%= link_to '首頁', products_path %> <span class="breadcromb-separate">/</span> <%= Categories.find(@product.categories_id)[:ptitle] %>
+  <p id="notice"><%= notice %></p>
+  <div class="product_title">
+    <div class="breadcrumbs">
+      <%= link_to '首頁', products_path %> <span class="breadcromb-separate">/</span> <%= Categories.find(@product.categories_id)[:ptitle] %>
     </div>
-		<h3 class="text-success"><%= @product.title %></h3>
-	</div>
-	<div class="product_info">
-		<div class="photos">
-			
-			<% for image in @product.images.limit(1) %>
-			<div class="image main" style="background-image:url(<%= image.image.url(:medium)  %>)" ></div>
-			<% end %>
-			
-			<% for image in @product.images.limit(2) %>
-			<div class="image thmbnl" style="background-image:url(<%= image.image.url(:medium)  %>)" ></div>
-			<% end %>
-			
-			
-		</div>
-		
-		<div class="bid-info countdown_holder">
-		
-			<div class="price"><%= @product.price %>元</div>
-			<% @time = @product.end_at.to_i %>
-            <%= content_tag(:span, "--:--:--",:class => "countdown countthis", :time => @time) %>
-			
-			<div class="picture"><img src="http://placehold.it/70x70"/></div>
-
-			<%= button_to "下標", { :controller => 'bid', :action => 'biding'}, :id => @product.id  , :class => "bidsubmit btn btn-warning", :disabled => true %>
-			<ul class="current-bid">
-				<li class="highlight">金額：<span class="value"><%= @product.price %>元</span></li>
-				<li>目前贏家：<span class="value"></span></li>
-				<li>商品定價：<span class="value"><%= @product.primary_price %>元</span></li>
-				<li>目前競標價格：<span class="value"><%= @product.price %>元</span></li>
-				<li><hr/></li>
-				<li>立即購買金額：<span class="value"><%= @product.primary_price %>元</span></li>
-			</ul>
-			<form onsubmit="return false;">
-				<button class="btn btn-primary span2 buy_now">直接購買<br/></button>
-			</form>
-		</div>
-		<div class="bid-history">
-			<div class="history-title">投標紀錄</div>
-			<table class="table table-striped">
-				<tr>
-					<th class="text-center">金額</th>
-					<th class="text-center">競標者</th>
-					<th class="text-center">???</th>
-				</tr>
-				<tr>
-					<td>100</td>
-					<td class="text-center">Andy</td>
-					<td class="text-center">ooxx</td>
-				</tr>
-				<tr>
-					<td>100</td>
-					<td class="text-center">Andy</td>
-					<td class="text-center">ooxx</td>
-				</tr>
-				<tr>
-					<td>100</td>
-					<td class="text-center">Andy</td>
-					<td class="text-center">ooxx</td>
-				</tr>
-				<tr>
-					<td>100</td>
-					<td class="text-center">Andy</td>
-					<td class="text-center">ooxx</td>
-				</tr>
-			</table>
-			<div class="auto-bid form-horizontal">
-				<div class="title">自動下標</div>
-				<div class="control-group"><div class="control-label">當競標達到</div> <div class="controls"><input type="text" class="span1"/> 元</div></div>
-				<div class="control-group"><div class="control-label">開始自動下標</div> <div class="controls"><input type="text" class="span1"/> 次</div></div>
-				<div class="button-row"><button class="btn btn-warning">開始自動</button></div>
-			</div>
-		</div>
-	</div>
-	
-	
-	
-
-
-
-
-	<hr>
-	<div class="bid_description">
-	<ul class="sp">
-		<li><h4>競標注意事項</h4></li>
-
-		<li>每下標一次需消費 1 點。下標所消費的點數無論是最後是否得標均無法退還。 </li>
-		<li>非限量商品及非點數下標所消費的點數如未得標可使用立即購買折換為現金，於待繳金額中扣除。</li>
-		<li>限量商品以及點數競標是無法進行直接購買，若未得標，您於競標使用的點數，也無法退還。</li>
-		<li>參與競標時，系統會隨機配發一組競標專屬暱稱。結標後，紀錄會調整為真實會員暱稱，以示競標真實性。</li>
-		<li>畫面所顯示的剩餘時間及下標狀況，有可能因各人網路連線品質造成延遲現象。</li>
-		<li>本站準時結標，如因使用手機或低速無線網路連線，造成來不及下標，將不另作補償。 建議使用 Chrome，Firefox 及 Safari 的瀏覽器。</li>
-		<li>考量各會員頻寬不同，系統有可能在 0 秒後處理最後送入系統的下標資料，若於 0 秒後投標，非正常投標，無法保證可被接受。</li>
-		<li>本站無法保證每場拍賣的商品，您都能得標或以低價獲得。</li>
-		<li>網站主要的營運時間為上午 15:00 到 晚上 02:30，過了網站營運時間，所有正在競標中的商品結標時間會自動延長 12.5 小時。</li>
-
-		<hr>
-
-		<li><h4>商品詳細介紹</h4></li>
-		<li><%= @product.description.html_safe %></li>
-		<hr>
-		<li><h4>付款資訊</h4></li>
-
-		<li>付款方式	ATM轉帳 / 信用卡線上付款 / iBon / 貨到付款</li>
-		<li>運費和手續費	120 元</li>
-		<li>購買限制說明	 請於本商品得標後的48小時內選擇付款方式如有任何相關問題，請<%= link_to "與我們聯絡",  help_contact_path %>。</li>
-
-	</ul>
-	</div>
+    <h3 class="text-success"><%= @product.title %></h3>
+  </div>
+  <div class="product_info">
+    <div class="photos">
+      <% for image in @product.images.limit(1) %>
+        <div class="image main" style="background-image:url(<%= image.image.url(:medium)  %>)" ></div>
+      <% end %>
+      <% for image in @product.images.limit(2) %>
+        <div class="image thmbnl" style="background-image:url(<%= image.image.url(:medium)  %>)" ></div>
+      <% end %>
+    </div>
+    <div class="bid-info countdown_holder">
+      <div class="price"><%= @product.price %>元</div>
+        <% @time = @product.end_at.to_i %>
+        <%= content_tag(:span, "--:--:--",:class => "countdown countthis", :time => @time) %>
+        <div class="picture"><img src="http://placehold.it/70x70"/></div>
+          <%= button_to "下標", { :controller => 'bid', :action => 'biding'}, :id => @product.id  , :class => "bidsubmit btn btn-warning", :disabled => true %>
+          <ul class="current-bid">
+            <li class="highlight">金額：<span class="value"><%= @product.price %>元</span></li>
+            <li>目前贏家：<span class="value"></span></li>
+            <li>商品定價：<span class="value"><%= @product.primary_price %>元</span></li>
+            <li>目前競標價格：<span class="value"><%= @product.price %>元</span></li>
+            <li><hr/></li>
+            <li>立即購買金額：<span class="value"><%= @product.primary_price %>元</span></li>
+          </ul>
+          <form onsubmit="return false;">
+            <button class="btn btn-primary span2 buy_now">直接購買<br/></button>
+          </form>
+        </div>
+        <div class="bid-history">
+          <div class="history-title">投標紀錄</div>
+            <table class="table table-striped">
+              <tr>
+                <th class="text-center">金額</th>
+                <th class="text-center">競標者</th>
+                <th class="text-center">???</th>
+              </tr>
+              <tr>
+                <td>100</td>
+                <td class="text-center">Andy</td>
+                <td class="text-center">ooxx</td>
+              </tr>
+              <tr>
+                <td>100</td>
+                <td class="text-center">Andy</td>
+                <td class="text-center">ooxx</td>
+              </tr>
+              <tr>
+                <td>100</td>
+                <td class="text-center">Andy</td>
+                <td class="text-center">ooxx</td>
+              </tr>
+              <tr>
+                <td>100</td>
+                <td class="text-center">Andy</td>
+                <td class="text-center">ooxx</td>
+              </tr>
+            </table>
+            <div class="auto-bid form-horizontal">
+              <div class="title">自動下標</div>
+              <div class="control-group"><div class="control-label">當競標達到</div> <div class="controls"><input type="text" class="span1"/> 元</div></div>
+              <div class="control-group"><div class="control-label">開始自動下標</div> <div class="controls"><input type="text" class="span1"/> 次</div></div>
+              <div class="button-row"><button class="btn btn-warning">開始自動</button></div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="bid_description">
+          <ul class="sp">
+            <li><h4>競標注意事項</h4></li>
+            <li>每下標一次需消費 1 點。下標所消費的點數無論是最後是否得標均無法退還。 </li>
+            <li>非限量商品及非點數下標所消費的點數如未得標可使用立即購買折換為現金，於待繳金額中扣除。</li>
+            <li>限量商品以及點數競標是無法進行直接購買，若未得標，您於競標使用的點數，也無法退還。</li>
+            <li>參與競標時，系統會隨機配發一組競標專屬暱稱。結標後，紀錄會調整為真實會員暱稱，以示競標真實性。</li>
+            <li>畫面所顯示的剩餘時間及下標狀況，有可能因各人網路連線品質造成延遲現象。</li>
+            <li>本站準時結標，如因使用手機或低速無線網路連線，造成來不及下標，將不另作補償。 建議使用 Chrome，Firefox 及 Safari 的瀏覽器。</li>
+            <li>考量各會員頻寬不同，系統有可能在 0 秒後處理最後送入系統的下標資料，若於 0 秒後投標，非正常投標，無法保證可被接受。</li>
+            <li>本站無法保證每場拍賣的商品，您都能得標或以低價獲得。</li>
+            <li>網站主要的營運時間為上午 15:00 到 晚上 02:30，過了網站營運時間，所有正在競標中的商品結標時間會自動延長 12.5 小時。</li>
+            <hr>
+            <li><h4>商品詳細介紹</h4></li>
+            <li><%= @product.description.html_safe %></li>
+            <hr>
+            <li><h4>付款資訊</h4></li>
+            <li>付款方式    ATM轉帳 / 信用卡線上付款 / iBon / 貨到付款</li>
+            <li>運費和手續費  120 元</li>
+            <li>購買限制說明   請於本商品得標後的48小時內選擇付款方式如有任何相關問題，請<%= link_to "與我們聯絡",  help_contact_path %>。</li>
+          </ul>
+        </div>
 </div>

@@ -1,20 +1,20 @@
 <% if current_user %>
-	<li class="dropdown">
-		<a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-			<%= current_user.username %>
-			<b class="caret"></b>
-		</a>
-		<ul class="dropdown-menu">
-			<li><%= link_to '<i class="icon-user"></i> 會員中心'.html_safe, edit_registration_path(:user) %></li>
-			<% if current_user && current_user.is_admin %>
-			<li><%= link_to '<i class="icon-plus" ></i> 商品上架'.html_safe, new_product_path %></li>
-			<li><%= link_to '<i class="icon-comment" ></i> 發佈最新消息'.html_safe, new_about_path %></li>
-			<li><%= link_to '<i class=" icon-envelope"></i> 客服專區'.html_safe,  help_contact_index_path %></li>
-			<% end %>
-			<li><%= link_to( '<i class="icon-off"></i> 登出'.html_safe, destroy_user_session_path, :method => :delete) %></li>
-		</ul>
-	</li>
+  <li class="dropdown">
+    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
+      <%= current_user.username %>
+      <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><%= link_to '<i class="icon-user"></i> 會員中心'.html_safe, edit_registration_path(:user) %></li>
+        <% if current_user && current_user.is_admin %>
+          <li><%= link_to '<i class="icon-plus" ></i> 商品上架'.html_safe, new_product_path %></li>
+          <li><%= link_to '<i class="icon-comment" ></i> 發佈最新消息'.html_safe, new_about_path %></li>
+          <li><%= link_to '<i class=" icon-envelope"></i> 客服專區'.html_safe,  help_contact_index_path %></li>
+        <% end %>
+          <li><%= link_to( '<i class="icon-off"></i> 登出'.html_safe, destroy_user_session_path, :method => :delete) %></li>
+        </ul>
+  </li>
 <% else %>
-	<li><%= link_to '註冊', new_registration_path(:user) %></li>
-	<li><%= link_to "登入", new_session_path(:user) %></li>
+  <li><%= link_to '註冊', new_registration_path(:user) %></li>
+  <li><%= link_to "登入", new_session_path(:user) %></li>
 <% end %>

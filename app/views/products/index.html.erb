@@ -1,53 +1,44 @@
 <div id="myCarousel" class="carousel slide">
-	<div class="carousel-inner">
-		<div class="item">
-			<%= image_tag("01.jpg") %>
-		</div>
-		<div class="item active">
-			<%= image_tag("02.jpg") %>
-		</div>
-		<div class="item">
-			<%= image_tag("03.jpg") %>
-		</div>
-	</div>
-	<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-	<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+  <div class="carousel-inner">
+    <div class="item">
+      <%= image_tag("01.jpg") %>
+    </div>
+    <div class="item active">
+      <%= image_tag("02.jpg") %>
+    </div>
+    <div class="item">
+      <%= image_tag("03.jpg") %>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
 </div>
 
 <div id="products" class="ab-container main-container">
-	<ul>
-		<% @products.each do |product| %>
-			<li class="thumbnail countdown_holder">
-				<%= link_to product.title, product, :class => "title" %>
-				<% for image in product.images.limit(1) %>
-					<div class="index-img" style="background-image:url(<%= image.image.url(:medium)  %>)" >
-					</div>
-				<% end %>
-
-				<% @time = product.end_at.to_i %>
-				<%= content_tag(:span, "--:--:--",:class => "countdown countthis", :time => @time) %>
-
-				<%= content_tag :span, :class => "price" do %>
-					<%= product.price %>元<br />
-				<% end %>
-
-				<% @bid_user.each do |user| %>
-					<%= user.username %><br />
-				<% end %>
-
-				<%= button_to "下標", { :controller => 'bid', :action => 'biding'}, :id => product.id  , :class => "bidsubmit btn btn-warning", :disabled => true %>
-
-				<% if current_user && current_user.is_admin? %>
-					<%= button_to '刪除' , product_path(product), :method => :delete, :class => 'btn btn-danger' %>
-				<% end %>
-			</li>
-
-		<% end %>
-
-
-	</ul>
-
+  <ul>
+    <% @products.each do |product| %>
+      <li class="thumbnail countdown_holder">
+        <%= link_to product.title, product, :class => "title" %>
+        <% for image in product.images.limit(1) %>
+          <div class="index-img" style="background-image:url(<%= image.image.url(:medium)  %>)" >
+          </div>
+        <% end %>
+        <% @time = product.end_at.to_i %>
+        <%= content_tag(:span, "--:--:--",:class => "countdown countthis", :time => @time) %>
+        <%= content_tag :span, :class => "price" do %>
+          <%= product.price %>元<br />
+        <% end %>
+        <% @bid_user.each do |user| %>
+          <%= user.username %><br />
+        <% end %>
+        <%= button_to "下標", { :controller => 'bid', :action => 'biding'}, :id => product.id  , :class => "bidsubmit btn btn-warning", :disabled => true %>
+        <% if current_user && current_user.is_admin? %>
+          <%= button_to '刪除' , product_path(product), :method => :delete, :class => 'btn btn-danger' %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 </div>
 <div class="kaminari_products">
-	<%= paginate @products %>
-	</div>
+  <%= paginate @products %>
+</div>

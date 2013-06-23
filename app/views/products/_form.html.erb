@@ -1,37 +1,23 @@
-
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
+<% if @product.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <ul>
       <% @product.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-      
-      <%= f.input :categories_id, label: '商品類別', prompt:"請選擇商品類別", collection:[["3C數位",1],["服飾配件與美妝",2],["家電,視聽",3],["電玩與玩具",4],["寵物用品與水族",5],["運動休閒與美食",6],["書籍,文具,DVD",7],["傢俱,寢具,收藏",8],["汽機車百貨",9],["禮卷",10]],  :class => "span2" %>
-      
-      <%= f.input :title, label:'商品標題' %>
-
-      <%= f.input :description, label:'商品描述', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
-        
-      <%= f.input :primary_price, label:"商品原價", input_html: {class: 'span2'} %>
-      
-      <%= f.input :price, label:"起標價格", input_html: { class: 'span2' } %>
-
-      <%= f.input :end_at, label:'結標時間', start_year: Time.now.year, end_year: Time.now.year, input_html: { class: 'span2' } %>
-
-        <%= f.simple_fields_for :images do |image_form| %>
-
-    <%= image_form.input :image, label: "商品圖片" %>
-    
-
+    </ul>
+  </div>
 <% end %>
-    <span style="color:red;">※ 商品圖片請至少上傳一張</span>
- </div>
-  
 
+<div class="field">
+  <%= f.input :categories_id, label: '商品類別', prompt:"請選擇商品類別", collection:[["3C數位",1],["服飾配件與美妝",2],["家電,視聽",3],["電玩與玩具",4],["寵物用品與水族",5],["運動休閒與美食",6],["書籍,文具,DVD",7],["傢俱,寢具,收藏",8],["汽機車百貨",9],["禮卷",10]],  :class => "span2" %>
+  <%= f.input :title, label:'商品標題' %>
+  <%= f.input :description, label:'商品描述', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+  <%= f.input :primary_price, label:"商品原價", input_html: {class: 'span2'} %>
+  <%= f.input :price, label:"起標價格", input_html: { class: 'span2' } %>
+  <%= f.input :end_at, label:'結標時間', start_year: Time.now.year, end_year: Time.now.year, input_html: { class: 'span2' } %>
+  <%= f.simple_fields_for :images do |image_form| %>
+    <%= image_form.input :image, label: "商品圖片" %>
+  <% end %>
+  <span style="color:red;">※ 商品圖片請至少上傳一張</span>
+</div>

@@ -1,26 +1,25 @@
 # -*- encoding : utf-8 -*-
 class HelpController < ApplicationController
-#before_filter :authenticate_admin!, :except => [:contact, :tiro, :question]
   def contact_index
     if current_user && current_user.is_admin
-    @contacts = Contact.order("created_at DESC").page(params[:page]).per(5)
-      else
-      respond_to do |format|
-      format.html { redirect_to :action => :contact }
-     end
-    end
-  end
-  
-  def contact_show 
-    if current_user && current_user.is_admin
-    @contact = Contact.find(params[:id])
+      @contacts = Contact.order("created_at DESC").page(params[:page]).per(5)
     else
-     respond_to do |format|
-     format.html { redirect_to :action => :contact }
-     end
+      respond_to do |format|
+        format.html { redirect_to :action => :contact }
+      end
     end
   end
-  
+
+  def contact_show
+    if current_user && current_user.is_admin
+      @contact = Contact.find(params[:id])
+    else
+      respond_to do |format|
+        format.html { redirect_to :action => :contact }
+      end
+    end
+  end
+
   def contact
     @title = "聯絡我們"
     @contact = Contact.new  
@@ -28,11 +27,11 @@ class HelpController < ApplicationController
       format.html
     end
   end
-  
+
   def contact_create
     @contact = Contact.new(params[:contact])
-  
-  respond_to do |format|
+
+    respond_to do |format|
       if @contact.save
         format.html { redirect_to :action => :contact }
       else
@@ -49,9 +48,7 @@ class HelpController < ApplicationController
       format.html { redirect_to :action => :contact}
     end
   end
-  
-  
-  
+
   def tiro
     @title = "新手教學"
   end
@@ -59,5 +56,5 @@ class HelpController < ApplicationController
   def question
     @title = "常見問題"
   end
-  
+
 end

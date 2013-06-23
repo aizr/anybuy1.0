@@ -1,9 +1,9 @@
 <div class="ab-container", id="product_new">
-	<h4>商品上架</h4>
-	<hr>
-		<%= simple_form_for @product, :url => products_path, :html => { :multipart => true } do |f| %>
-			<%= render :partial => 'form', :locals => { :f => f } %> <br />
-			<%= f.submit "送出", :class => 'btn btn-success' %>
-			<%= link_to '取消上架', products_path, :class => 'btn btn-info' %>
-		<% end %>
+  <h4>商品上架</h4>
+  <hr>
+  <%= simple_form_for @product, :url => products_path, :html => { :multipart => true } do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %> <br />
+    <%= f.submit "送出", :class => 'btn btn-success' %>
+    <%= link_to '取消上架', products_path, :class => 'btn btn-info' %>
+  <% end %>
 </div>

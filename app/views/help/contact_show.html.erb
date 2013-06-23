@@ -1,11 +1,8 @@
 <div class="ab-container main-container">
-    
-      <li> 問題時間: <%= @contact.created_at.strftime("%Y-%m-%d %H:%M") %> </li> 
-      <li> 提問人姓名: <%= @contact.username %> </li>
-      <li> 提問人信箱: <%= @contact.email %> </li>
-      <li> 聯絡電話： <%= @contact.phone %></li>
-      <li> 問題標題: <%= @contact.title %> </li>
-      <li> 問題內容: <%= @contact.contact_message %> </li>
-     
- </div>
-
+  <li> 問題時間: <%= @contact.created_at.strftime("%Y-%m-%d %H:%M") %> </li> 
+  <li> 提問人姓名: <%= @contact.username %> </li>
+  <li> 提問人信箱: <%= @contact.email %> </li>
+  <li> 聯絡電話： <%= @contact.phone %></li>
+  <li> 問題標題: <%= @contact.title %> </li>
+  <li> 問題內容: <%= @contact.contact_message %> </li>
+</div>

@@ -1,16 +1,13 @@
 <div class="ab-container main-container">
-    <h4>客服專區</h4>
-    <hr />
-    <div class= "show_contact">
-        
-       <% @contacts.each do |contact| %>
+  <h4>客服專區</h4>
+  <hr />
+  <div class= "show_contact">
+    <% @contacts.each do |contact| %>
       <li> 問題時間: <%= contact.created_at.strftime("%Y-%m-%d") %> </li> 
       <li> 問題標題: <%= link_to contact.title, contact_show_path(contact) %> </li>
       <li> 問題內容: <%= truncate(contact.contact_message, :length => 25,  :ommision => '.....') %> </li>
       <hr />
-      <% end %>
-      
-      
-    </div>
+    <% end %>
+  </div>
 </div>
 

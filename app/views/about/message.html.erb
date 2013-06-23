@@ -1,25 +1,24 @@
 <div class="ab-container main-container">
-    
   <h3>最新消息</h3>
-<hr />
+  <hr />
   <% @messages.each do |message| %>
-  <div class="message">
-    <div class="message-title">
-      <p><%= message.created_at.strftime("%Y-%m-%d") %>&nbsp;&nbsp; <%= message.title %></p>
-    </div>
+    <div class="message">
+      <div class="message-title">
+        <p><%= message.created_at.strftime("%Y-%m-%d") %>&nbsp;&nbsp; <%= message.title %></p>
+      </div>
 
-    <div class="message-content">
-       <p><%= message.content.html_safe %></p>
-    </div>
-     <% if current_user && current_user.is_admin? %>
+      <div class="message-content">
+        <p><%= message.content.html_safe %></p>
+      </div>
+
+      <% if current_user && current_user.is_admin? %>
         <%= button_to '刪除' , about_path(message), :method => :delete, :class => 'btn btn-danger'%>
-     <% end %>
-     <hr>
+      <% end %>
+
+      <hr>
     </div>
   <% end %>
-  
-   <div class="kaminari_message">
-       <%= paginate @messages %>
-   </div>
-   
+  <div class="kaminari_message">
+    <%= paginate @messages %>
+  </div>
 </div>

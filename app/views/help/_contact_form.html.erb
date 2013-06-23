@@ -1,25 +1,13 @@
 <% if current_user && current_user.is_admin? %>
-  
-    <%= f.input :username, label: '姓名', input_html: {value: "#{current_user.username}"}, disabled: true %> 
-
-    <%= f.input :phone, label:'聯絡電話', input_html: {value: "#{current_user.phone}"}, disabled: true %> 
-
-    <%= f.input :email, label:'Email', input_html: {value: "#{current_user.email}"}, disabled: true %> 
-
-    <%= f.input :title, label:'主題', :autofocus => true %>
-
-    <%= f.input :contact_message, label: '內容', input_html: {class: 'span9', rows:'10'}, hint: "※字數限制300字"%>
-
-        <% else %>
-
-    <%= f.input :username, label: '姓名', :autofocus => true %> 
-
-    <%= f.input :phone, label:'聯絡電話' %> 
-
-    <%= f.input :email, label:'Email'%> 
-
-    <%= f.input :title, label:'主題' %>
-
-    <%= f.input :contact_message, label: '內容', input_html: {class: 'span9', rows:'10'}, hint: "※字數限制300字"%>
-
+  <%= f.input :username, label: '姓名', input_html: {value: "#{current_user.username}"}, disabled: true %> 
+  <%= f.input :phone, label:'聯絡電話', input_html: {value: "#{current_user.phone}"}, disabled: true %>
+  <%= f.input :email, label:'Email', input_html: {value: "#{current_user.email}"}, disabled: true %>
+  <%= f.input :title, label:'主題', :autofocus => true %>
+  <%= f.input :contact_message, label: '內容', input_html: {class: 'span9', rows:'10'}, hint: "※字數限制300字"%>
+<% else %>
+  <%= f.input :username, label: '姓名', :autofocus => true %> 
+  <%= f.input :phone, label:'聯絡電話' %> 
+  <%= f.input :email, label:'Email'%> 
+  <%= f.input :title, label:'主題' %>
+  <%= f.input :contact_message, label: '內容', input_html: {class: 'span9', rows:'10'}, hint: "※字數限制300字"%>
 <% end %>

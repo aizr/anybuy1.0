@@ -1,13 +1,10 @@
 # -*- encoding : utf-8 -*-
 class BidController < ApplicationController
 
-  
-     
   def biding
-     
-   if current_user == nil
-     redirect_to new_session_path(:user)
-   else 
+    if current_user == nil
+      redirect_to new_session_path(:user)
+    else
       @product = Product.find_by_id(params[:id])
       
       @user_id = current_user.id
