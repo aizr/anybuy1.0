@@ -1,8 +1,8 @@
 worker_processes 1
 
-listen "/var/www/rails/shared/sockets/unicorn.sock"
+listen "/var/www/anybuy/shared/sockets/unicorn.sock"
 
-project_dir = "/var/www/rails/current"
+project_dir = "/var/www/anybuy/current"
 working_directory project_dir
 
 stderr_path "#{project_dir}/log/unicorn_error.log"
