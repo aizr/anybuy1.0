@@ -1,22 +1,23 @@
+#contact {
+  float:left;
+  display: inline-block;
+  clear: both;
+}
 #contact .btn {
-		margin-left: 400px;
+  margin-left: 400px;
 }
 
-#contact .control-label{
-		text-align: left;
-		padding-right: 0px;
-		width:70px;
+#contact .control-label {
+  text-align: left;
+  padding-right: 0px;
+  width:70px;
 }
 
-
-
-#contact .controls{
-		margin-left:0px;
-
-
+#contact .controls {
+  margin-left:0px;
 }
 
-#contact .help-block{
-		text-align: left;
-		margin-left: 70px;
+#contact .help-block {
+  text-align: left;
+  margin-left: 70px;
 }

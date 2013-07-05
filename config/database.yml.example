@@ -1,0 +1,19 @@
+﻿development:
+  adapter: mysql2
+  database: anybuydev
+  host: localhost
+  user: root
+  password:
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: mysql2
+  database: anybuytest
+  host: localhost
+  user: root
+  password:
+  encoding: utf8
+  pool: 5
+  timeout: 5000

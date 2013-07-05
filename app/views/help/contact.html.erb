@@ -7,7 +7,7 @@
   <p>處理作業一般約在2~3個工作天內，如因件數眾多處理不及，延誤回覆尚請見諒</p>
   <p>我們非常重視您的任何意見及建議，並希望您在AnyBuy能有愉快的經驗!</p><br />
 
-  <%= simple_form_for @contact, :url => help_contact_create_path, :html => {:class => 'form-horizontal'} do |f| %>  
+  <%= simple_form_for @contact, :url => help_contact_create_path, :html => {:class => 'form-horizontal'} do |f| %>
     <%= render :partial => 'contact_form', :locals => { :f => f } %>
     <%= f.submit "送出",  class: 'btn btn-success span3' %>
   <% end %>
