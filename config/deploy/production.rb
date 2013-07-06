@@ -16,7 +16,7 @@ set :rails_env, "production"
 
 set :scm_verbose, true
 set :use_sudo, false
-set :bundle_dir, "/home/webuser/.rvm/gems/ruby-1.9.3-p327@global"
+set :bundle_dir, "/home/webuser/.rvm/gems/ruby-1.9.3-p327"
 set :rvm_gemset, "3.2.13"
 
 role :app, "#{domain}"
