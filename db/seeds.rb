@@ -7,13 +7,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Categories.create!(pname: '3c', ptitle: '3c數位')
-Categories.create!(pname: 'clothes', ptitle: '服飾配件與美妝')
-Categories.create!(pname: 'appliances', ptitle: '家電、視聽')
-Categories.create!(pname: 'games', ptitle: '電玩與玩具')
-Categories.create!(pname: 'pets', ptitle: '寵物用品與水族')
-Categories.create!(pname: 'sports_food', ptitle: '運動休閒與美食')
-Categories.create!(pname: 'books', ptitle: '書籍、文具、DVD')
-Categories.create!(pname: 'funiture', ptitle: '傢俱、寢具、收藏')
-Categories.create!(pname: 'cars_moto_department', ptitle: '汽機車百貨')
-Categories.create!(pname: 'ticket', ptitle: '禮卷')
+categories = Categories.create([{ pname: '3c', ptitle: '3c數位' }, {pname: 'clothes', ptitle: '服飾配件與美妝'}, {pname: 'appliances', ptitle: '家電、視聽'},
+                                {pname: 'games', ptitle: '電玩與玩具'}, {pname: 'pets', ptitle: '寵物用品與水族'}, {pname: 'sports_food', ptitle: '運動休閒與美食'}, {pname: 'books', ptitle: '書籍、文具、DVD'},
+                                {pname: 'funiture', ptitle: '傢俱、寢具、收藏'}, {pname: 'cars_moto_department', ptitle: '汽機車百貨'}, {pname: 'ticket', ptitle: '禮卷'}])
