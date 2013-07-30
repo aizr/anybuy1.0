@@ -1,8 +1,7 @@
 #contact {
-  float:left;
-  display: inline-block;
-  clear: both;
+  float: right;
 }
+
 #contact .btn {
   margin-left: 400px;
 }

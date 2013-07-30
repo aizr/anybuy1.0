@@ -22,7 +22,7 @@ class HelpController < ApplicationController
 
   def contact
     @title = "聯絡我們"
-    @contact = Contact.new  
+    @contact = Contact.new
     respond_to do |format|
       format.html
     end
@@ -33,13 +33,14 @@ class HelpController < ApplicationController
 
     respond_to do |format|
       if @contact.save
+        #notice_stickie("留言成功，直接到<a href=\"#comment-#{@comment.id}\">你的留言</a>。")
         format.html { redirect_to :action => :contact }
       else
         format.html { render action: "contact" }
       end
     end
   end
-  
+
   def contact_destroy
     @contact = Contact.find(params[:id])
     @contact.destroy

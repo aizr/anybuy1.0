@@ -1,91 +1,91 @@
-#new-registrations .control-label{
-		text-align: left;
-		padding-left: 10px;
-		width:120px;
+#new-registrations .control-label {
+    text-align: left;
+    padding-left: 10px;
+    width:120px;
 }
 
 #new-registrations hr {
-		margin: 8px 0 20px 0;
-		padding-top:0;
-		border: 0;
-		border-top: 1px dashed #BFBFBF;
-		border-bottom: 1px dashed #BFBFBF;
+    margin: 8px 0 20px 0;
+    padding-top:0;
+    border: 0;
+    border-top: 1px dashed #BFBFBF;
+    border-bottom: 1px dashed #BFBFBF;
 }
 
 #edit-registrations .control-label {
-		text-align: left;
-		padding-left: 10px;
-		width:120px;
+    text-align: left;
+    padding-left: 10px;
+    width:120px;
 }
 
 #edit-registrations hr {
-		margin: 8px 0 20px 0;
-		padding-top:0;
-		border: 0;
-		border-top: 1px dashed #BFBFBF;
-		border-bottom: 1px dashed #BFBFBF;
+    margin: 8px 0 20px 0;
+    padding-top:0;
+    border: 0;
+    border-top: 1px dashed #BFBFBF;
+    border-bottom: 1px dashed #BFBFBF;
 }
 
 #edit-registrations .btn {
-		margin-left: 180px;
+    margin-left: 180px;
 }
 
-#login .facebook_login{
-		float:right;
-		margin: 50px 200px auto;
+#login .facebook_login {
+    float:right;
+    margin: 50px 200px auto;
 }
 
 #login .login_form {
-		width:460px;
-		#background-color: #FFFFFF;
-		border-right: 1px  dashed #BFBFBF;
+    width:460px;
+    #background-color: #FFFFFF;
+    border-right: 1px  dashed #BFBFBF;
 }
 
 #login .controls {
-		display: inline-block;
-		margin-left: 60px;
+    display: inline-block;
+    margin-left: 60px;
 }
 
-#login .control-label{
-		text-align: left;
-		padding-left: 30px;
-		width:50px;
-		display: inline-block;
-		font-size:16px;
+#login .control-label {
+    text-align: left;
+    padding-left: 30px;
+    width: 50px;
+    display: inline-block;
+    font-size:16px;
 }
 
-#login .btn-primary{
-		margin-left:140px;
+#login .btn-primary {
+    margin-left: 140px;
 }
 
 #login .link_registrations .link_password {
-		margin:0;
+    margin: 0;
 }
 
 #passwords .link_registrations .link_login {
-		margin:0;
+    margin: 0;
 }
 
-#passwords .control-label{
-		text-align: left;
-		padding-left: 30px;
-		width:160px;
-		display: inline-block;
-		font-size:16px;
+#passwords .control-label {
+    text-align: left;
+    padding-left: 30px;
+    width: 160px;
+    display: inline-block;
+    font-size: 16px;
 }
 
 #passwords .controls {
-		#display: inline-block;
-		width:300px;
-		margin: 20px 60px 10px 0;
+    #display: inline-block;
+    width: 300px;
+    margin: 20px 60px 10px 0;
 }
 
 #passwords .btn-primary {
-		margin:0 0 30px 200px;
-		width:80px;
-		display: inline-block;
+    margin:0 0 30px 200px;
+    width: 80px;
+    display: inline-block;
 }
 
 #passwords p{
-		margin:0;
+    margin: 0;
 }

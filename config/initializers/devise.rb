@@ -1,4 +1,5 @@
 # -*- encoding : utf-8 -*-
+require "omniauth-facebook"
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -38,7 +39,7 @@ Devise.setup do |config|
   # to authenticate or find a user. Default is :email.
   config.case_insensitive_keys = [ :email ]
     #config.case_insensitive_keys = [ :username ]
-    
+
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
@@ -127,7 +128,7 @@ Devise.setup do |config|
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
    config.timeout_in = 10.minutes
-  
+
   # If true, expires auth token on session timeout.
   # config.expire_auth_token_on_timeout = false
 
@@ -208,11 +209,10 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-    require "omniauth-facebook"
-    config.omniauth :facebook, '450080858406983', 'b9c67805b963a152f08169792691b288'
-    
+  config.omniauth :facebook, '450080858406983', 'b9c67805b963a152f08169792691b288'
+
     #config.omniauth :twitter, ENV["llISQvFaj2Y6jDN71hFDMow"], ENV["VQOFaRLcWqzVDtgl1XbTlvw3pHSwZAK8EnrF663JvKY"]
-  
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

@@ -1,16 +1,22 @@
 // Place all the styles related to the member controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#sidebar {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+}
+
 #sidebar h4{
-		text-align: center;
-		letter-spacing:5px;
+    text-align: center;
+    letter-spacing:5px;
 }
 
 #sidebar li{
-		margin-left:20px;
-		letter-spacing:2px;
+    margin-left:20px;
+    letter-spacing:2px;
 }
 
 #sidebar a {
-		text-decoration: none;
+    text-decoration: none;
 }
